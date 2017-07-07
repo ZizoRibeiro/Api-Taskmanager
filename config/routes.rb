@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   namespace :api, defaults: { format: :json }, constraints: { subdomain: 'api' }, path: '/' do
     # To organize controllers by namespace, format Json, subdomain api, path: '/' ex: api.taskmanager.com/
     namespace :v1, path: '/', constraints: ApiVersionConstraint.new(version: 1, default: true) do
-      resources :users, only: [:show]
+      resources :users, only: [:show, :create]
     end
 
     # namespace :v2, path: '/", constraints: ApiVersionConstraint.new(version: 2) do
