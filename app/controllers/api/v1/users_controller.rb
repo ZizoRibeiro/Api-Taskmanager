@@ -1,9 +1,8 @@
 class Api::V1::UsersController < ApplicationController
   respond_to :json
-  
-  
+
   def show
-    begin 
+    begin
       @user = User.find(params[:id])
       respond_with @user
     rescue
@@ -21,12 +20,9 @@ class Api::V1::UsersController < ApplicationController
     end
   end
 
-
   private
 
   def user_params
     params.require(:user).permit(:email, :password, :password_confirmation)
   end
-
-
 end
