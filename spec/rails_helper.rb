@@ -41,8 +41,7 @@ RSpec.configure do |config|
   end
 
   config.include FactoryGirl::Syntax::Methods
-  config.include RequestSpecHelper, type: :request
-  #config.include RequestSpecHelper
+  config.include RequestSpecHelper # json body will be include in all tests
   
   # Remove this line if you're not using ActiveRecord or ActiveRecord fixtures
   config.fixture_path = "#{::Rails.root}/spec/fixtures"
