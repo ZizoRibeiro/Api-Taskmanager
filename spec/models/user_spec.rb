@@ -3,13 +3,18 @@ require 'rails_helper'
 RSpec.describe User, type: :model do
   let(:user) { build(:user) }
 
+  # association
+  it { is_expected.to have_many(:tasks).dependent(:destroy) }
+
+  # validations
   it { is_expected.to validate_presence_of(:email) }
   it { is_expected.to validate_uniqueness_of(:email).case_insensitive }
   it { is_expected.to validate_confirmation_of(:password) }
   it { is_expected.to allow_value('zizo@ribeiro.com').for(:email) }
   it { is_expected.to validate_uniqueness_of(:auth_token) }
 
-  describe '#info' do # the symbol # represents instance method 
+  # testing method #info
+  describe '#info' do # the symbol # represents instance method
     it 'returns email, created_at and a Token' do
       user.save!
       allow(Devise).to receive(:friendly_token).and_return('abc123xyzTOKEN')
@@ -18,6 +23,7 @@ RSpec.describe User, type: :model do
     end
   end
 
+  # testing method #generate_authentication_token!
   describe '#generate_authentication_token!' do
     it 'generates a unique auth token' do
       allow(Devise).to receive(:friendly_token).and_return('abc123xyzTOKEN')
@@ -33,6 +39,5 @@ RSpec.describe User, type: :model do
 
       expect(user.auth_token).not_to eq(existing_user.auth_token)
     end
-
   end
 end
