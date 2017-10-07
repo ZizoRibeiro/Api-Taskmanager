@@ -4,6 +4,6 @@ FactoryGirl.define do
     description { Faker::Lorem.paragraph }
     deadline { Faker::Date.forward }
     done false
-    user 
+    user
   end
 end
