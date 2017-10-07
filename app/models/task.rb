@@ -1,3 +1,9 @@
 class Task < ApplicationRecord
-  #belongs_to :user
+  
+  # associations
+  belongs_to :user
+
+  # validations
+  validates_presence_of :title,
+                        :user_id
 end
