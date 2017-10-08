@@ -15,3 +15,7 @@
 
 # Ignore Byebug command history file.
 .byebug_history
+
+# Ignore gemset files
+.ruby-gemset
+.ruby-version
