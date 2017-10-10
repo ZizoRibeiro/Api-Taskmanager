@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe 'Task API' do
-  before { host! 'api.taksmanager.net' }
+  before { host! 'api.taks-manager.net' }
 
   let!(:user) { create(:user) }
   let(:headers) do

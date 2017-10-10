@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe 'Sessions API', type: :request do
-  before { host! 'api.taskmanager.dev' }
+  before { host! 'api.task-manager.net' }
   let(:user) { create(:user) } # Factory Girl
   let(:headers) do
     {
