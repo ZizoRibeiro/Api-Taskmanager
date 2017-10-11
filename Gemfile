@@ -6,28 +6,29 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
-# Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 5.1', '>= 5.1.2'
-
-# Webserver
-gem 'puma', '~> 3.0'
-
-# Data
-gem 'pg', '~> 0.18'
-
 # Auth
 gem 'devise'
 gem 'devise_token_auth'
 gem 'omniauth'
 
-# Others
-gem 'uglifier', '>= 1.3.0'
+# Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
+gem 'rails', '~> 5.1', '>= 5.1.2'
+
+# Data
+gem 'pg', '~> 0.18'
 
 # Json
 gem 'active_model_serializers', '~> 0.10.0'
 
+# Others
+gem 'rack-cors'
+gem 'uglifier', '>= 1.3.0'
+
 # search
 gem 'ransack'
+
+# Webserver
+gem 'puma', '~> 3.0'
 
 group :development, :test do
   gem 'byebug', platform: :mri
