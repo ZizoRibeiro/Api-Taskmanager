@@ -17,6 +17,8 @@ gem 'pg', '~> 0.18'
 
 # Auth
 gem 'devise'
+gem 'devise_token_auth'
+gem 'omniauth'
 
 # Others
 gem 'uglifier', '>= 1.3.0'
