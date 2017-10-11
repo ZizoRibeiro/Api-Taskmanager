@@ -1,4 +1,4 @@
 class ApplicationController < ActionController::API
-  #protect_from_forgery with: :exception
+  include DeviseTokenAuth::Concerns::SetUserByToken
   include Authenticable
 end
