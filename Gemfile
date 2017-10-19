@@ -22,6 +22,7 @@ gem 'active_model_serializers', '~> 0.10.0'
 
 # Others
 gem 'rack-cors'
+gem 'rails-i18n', '~> 5.0.0'
 gem 'uglifier', '>= 1.3.0'
 
 # search
