@@ -5,7 +5,7 @@ class Api::V2::TaskSerializer < ActiveModel::Serializer
   belongs_to :user
 
   def short_description
-    object.description[1..40]
+    object.description[1..40] if object.description.present?
   end
 
   def late?
